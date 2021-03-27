@@ -1,3 +1,8 @@
+/* İçerisinde random sayılar bulunan bir dosyayı sayıları küçükten büyüğe sıralayarak yeni bir dosyaya yazan program.
+   Dosyadan her seferinde PARTIAL_COUNT kadar sayı okunup bu sayılar geçici dosyalara sayılar sıralanarak yazıldı. Daha sonra bu dosyalar
+   sayılar küçükten büyüğe sıralı olacak şekilde birleştirilerek tek dosya haline getirildi. İşlem sonunda geçici dosyalar silinmiş oluyor.*/  
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -67,11 +72,11 @@ int main(void)
 
 		if (fwrite(buf, sizeof(int), PARTIAL_SIZE, m[i].f) != PARTIAL_SIZE)
 		{
-			fprintf(stderr, "cannot write to temproray file!..\n"); // t�m temporary dosyalar otomatik kapan�r
+			fprintf(stderr, "cannot write to temproray file!..\n"); // tüm temporary dosyalar otomatik kapanýr
 			free(buf);
 			goto FAILURE;
 		}
-		rewind(m[i].f);   //temporary file pointer� ba�a getirilmelidir
+		rewind(m[i].f);   //temporary file pointerý baþa getirilmelidir
 	}
 	fclose(fr);
 	free(buf);
